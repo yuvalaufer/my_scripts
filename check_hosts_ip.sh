@@ -1,15 +1,7 @@
 #! /bin/bash
 
-echo "checking permissions..."
-if [ `id |awk '{print $1}' |grep root |wc -l` == "0" ]; then
-	echo "permission denied. please run the script as root user!!!"
-	exit 1
-else 
-	echo "this is root user. proceeding.."
-fi
 
-
-LOGFILE=/var/log/ip_check.log
+LOGFILE=/var/tmp/ip_check.log
 
 if [ ! -f $LOGFILE ]; then 
 	touch $LOGFILE
