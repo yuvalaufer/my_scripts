@@ -1,4 +1,4 @@
-#! /bin/bash -x
+#! /bin/bash
 
 echo "checking permissions..."
 if [ `id |awk '{print $1}' |grep root |wc -l` == "0" ]; then
@@ -43,7 +43,7 @@ server_list=($(cat /etc/hosts |grep -v  127.0.0.1 |grep "\." |awk '{print $2}' |
 
 for ((i=0; i<$n_of_ips; i++)); do
 	echo "----------------------------"
-	echo "checking server name: ${server_list[$i]} with ip: ${ip_list[$i]}
+	echo "checking server name: ${server_list[$i]} with ip: ${ip_list[$i]}"
 	echo "----------------------------"
 	ping_ip ${ip_list[$i]} ${server_list[$i]}
 done
